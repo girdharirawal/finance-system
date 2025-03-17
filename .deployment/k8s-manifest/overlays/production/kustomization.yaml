@@ -12,4 +12,5 @@ patches:
     kind: HorizontalPodAutoscaler
     name: web-deployment-hpa
 - path: ./patches/resource-patch.yaml
+- path: ./patches/finance-system-prod-config.yaml
   

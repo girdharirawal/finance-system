@@ -10,3 +10,6 @@ patches:
 - path: ./patches/ingress-url-patch.yaml
   target:
     kind: Ingress
+- path: ./patches/finance-system-dev-config.yaml
+  
+    

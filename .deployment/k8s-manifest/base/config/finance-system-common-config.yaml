@@ -1,1 +1,13 @@
 #Common configuration
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: finance-system-common-config
+  namespace: finance
+data:
+  APP_NAME: "FinanceApp"
+  LOG_LEVEL: "INFO"
+  CURRENCY: "USD"
+  REPORTING_ENABLED: "true"
+  TRANSACTION_TIMEOUT: "30s"
+  API_BASE_URL: "https://api.financeapp.com"
