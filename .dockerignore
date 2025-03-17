@@ -1,0 +1,68 @@
+# Node dependencies (will be installed inside the container)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+
+# Logs
+logs/
+*.log
+
+# Environment variables and secrets
+.env
+.env.*.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+
+# Build artifacts
+dist/
+build/
+.out/
+.cache/
+
+# Test & Coverage
+coverage/
+.nyc_output/
+jest/
+*.lcov
+
+# Docker-related files (prevent unnecessary copies)
+
+**/Dockerfile.temp
+
+# Kubernetes-related files
+.kube/
+*.kubeconfig
+helm-release.yaml
+
+# Temporary files
+*.bak
+*.old
+*.orig
+*.tmp
+
+# PM2 process files
+pids/
+pm2.log
+pm2.pid
+
+# ESLint & Prettier cache
+.eslintcache
+.prettierignore
+
+# Swagger generated files
+swagger.json
+swagger.yaml
+IaaC/*

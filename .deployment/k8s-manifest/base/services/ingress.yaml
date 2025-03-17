@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-ingress
+  annotations:
+    kubernetes.io/ingress.class: 'traefik' #any supporting ingress class
+spec:
+  rules:
+  - host: 'finsystem.mycompany.com'
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: finweb-service
+              port:
+                number: 80
+  tls:
+    - secretName: tls-secret

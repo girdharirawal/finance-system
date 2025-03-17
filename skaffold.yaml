@@ -1,0 +1,43 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+build:
+  artifacts:
+    - image: my-registry.com/my-web-app
+      context: .deployment/docker-files
+      docker:
+        dockerfile: web.dockerfile
+        buildArgs: # build arguments like image version and Token can be used here
+        APP_BUILD_VERSION= "{{._VERSION}}"
+deploy:
+  kustomize:
+    path: .deployment/k8s-manifest/base
+
+profiles:
+  - name: dev
+    build:
+      artifacts:
+        - image: my-registry.com/web-app:dev
+    deploy:
+      kustomize:
+        path: .deployment/k8s-manifest/overlays/dev
+
+  - name: test
+    build:
+      artifacts:
+        - image: my-registry.com/my-web-app:test
+    deploy:
+      kustomize:
+        path: .deployment/k8s-manifest/overlays/test
+
+  - name: prod
+    build:
+      artifacts:
+        - image: my-registry.com/my-web-app:prod
+    deploy:
+      kustomize:
+        path: .deployment/k8s-manifest/overlays/prod
+
+#Tag policies and other things can be added here according to define the policy
+tagPolicy:
+    envTemplate:
+      template: "{{._VERSION}}-{{.GIT_SHA}}" # Format: v1.0.0-abc1234
