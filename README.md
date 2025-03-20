@@ -8,6 +8,7 @@ The project is built using a React frontend, a set of Node.js microservices for 
 
 # Build and Run the Front-end Application
 ## Installation
+```
 cd frontend
  npm install or Yarn install
  
@@ -16,7 +17,7 @@ cd frontend
  npm run build or Yarn buid
  
  npm start or yarn start
-
+```
 # Build and Run the Microservices
 ## Backend (Microservices)
 Navigate to the respective microservice directory
