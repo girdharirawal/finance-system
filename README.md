@@ -20,7 +20,7 @@ cd frontend
 # Build and Run the Microservices
 ## Backend (Microservices)
 Navigate to the respective microservice directory
-
+```
 cd backends/account-service
 
 npm install or yarn install
@@ -28,7 +28,7 @@ npm install or yarn install
 npm run build or yarn build
 
 npm start
-
+```
 Repeat the above steps for bill-payment-service and account-process-service.
 
 # Infrastructure Setup with Terraform
@@ -41,6 +41,7 @@ Install Terraform: https://developer.hashicorp.com/terraform/tutorials
 Authenticate with GCP using gcloud auth login.
 
 Navigate to the Terraform directory:
+```
 cd IaaC/finance-system-gcp-infra
 
 terraform init
@@ -48,7 +49,7 @@ terraform init
 terraform plan -var-file=dev.tfvars
 
 terraform apply -var-file=dev.tfvars
-
+```
 # Kustomize 
 Kustomize is a standalone tool that customizes Kubernetes configuration YAMLs, separating configuration from code. It allows you to create variations of your base Kubernetes configurations without modifying the original YAML files. By overlaying patches and modifications, Kustomize simplifies the management of multiple environments (development, staging, production) or variations of your application, promoting reusability and reducing duplication. It integrates seamlessly with kubectl, making it a powerful and convenient way to manage complex Kubernetes deployments
 
